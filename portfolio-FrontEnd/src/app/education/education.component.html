@@ -1,1 +1,23 @@
-<p>education works!</p>
+
+<div class="container-fluid text-center py-4">
+  <div class="row align-items-start">
+    <div class="col-3 ">
+      <h3>Educacion</h3>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row align-items-center py-3" *ngFor="let education of educations">
+    <div class="col-3">
+      <img src=" {{ education.url_Photo_education }} " alt="Imagen-empresa">
+    </div>
+    <div class="col-9">
+      <h4> {{ education.name_education }} </h4>
+      <h6> {{ education.place_education }} </h6>
+      <h6> {{ education.level_education }} </h6>
+      <span> Duracion: {{ education.duration_education }} </span>
+    </div>
+  </div>
+</div>

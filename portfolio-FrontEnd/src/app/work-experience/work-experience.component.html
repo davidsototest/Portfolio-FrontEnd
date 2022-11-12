@@ -1,1 +1,22 @@
-<p>work-experience works!</p>
+<div class="container-fluid text-center py-4">
+  <div class="row align-items-start">
+    <div class="col-3 ">
+      <h3>Experiencias Laborales</h3>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row align-items-center py-3" *ngFor="let work of works">
+    <div class="col-3">
+      <img src="{{ work.urlPhoto }}" alt="Imagen-empresa">
+    </div>
+    <div class="col-9">
+      <h4> {{ work.name }} </h4>
+      <h6> {{ work.job }} </h6>
+      <h6> {{ work.duration }} </h6>
+      <span> {{ work.chores }} </span>
+    </div>
+  </div>
+</div>

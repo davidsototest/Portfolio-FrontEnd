@@ -25,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
