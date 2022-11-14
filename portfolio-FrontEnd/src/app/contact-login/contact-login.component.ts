@@ -7,12 +7,11 @@ import { Contact } from '../contacts';
   styleUrls: ['./contact-login.component.css']
 })
 export class ContactLoginComponent implements OnInit {
-  contacts: Contact[]=[
-    new Contact("davidSoto@testtest.com", ""),
-    new Contact("linkedin.com/in/david-soto-068716220", ""),
-    new Contact("linkedin.com/in/david-soto-068716220", ""),
-    new Contact("linkedin.com/in/david-soto-068716220", ""),
-  ];
+  gmail:string="test@gmail.com";
+  linkedin:string="linkedin.com/in/david-soto-068716220";
+  discord:string="Discord.com";
+  instagram:string="instagram.com";
+
 
   constructor() { }
 
