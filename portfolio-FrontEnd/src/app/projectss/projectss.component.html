@@ -1,25 +1,27 @@
-
 <br><br>
 
-<div class="container text-center py-1">
+
+<div class="container text-center py-4">
   <div class="row align-items-start">
     <div class="col-3 ">
-      <h5>Educacion</h5>
+      <h5>Participacion en Proyectos</h5>
     </div>
   </div>
 </div>
 
 
 <div class="container">
-  <div class="row align-items-center py-3" *ngFor="let education of educations">
+  <div class="row align-items-center py-4" *ngFor="let project of projectss">
     <div class="col-3 text-center">
       <img class="imagenWorkEducation" src="https://trello.com/1/cards/636fb47e9843a200ac4ff506/attachments/636fb5e01fce8b03abdef341/previews/636fb5e11fce8b03abdef34d/download/argentina-programa.png" alt="Imagen-empresa">
     </div>
-    <div class="col-9">
-      <h5> {{ education.name_education }} </h5>
-      <h6> {{ education.place_education }} </h6>
-      <h6> {{ education.level_education }} </h6>
-      <span> Duracion: {{ education.duration_education }} </span>
+    <div class="col-8">
+      <h5> {{ project.name_project }} </h5>
+      <h6> {{ project.stake_project }} </h6>
+      <span> {{ project.description_project }} </span> <br>
+      <button class="btn btn-primary" >Ver Proyecto</button>
     </div>
   </div>
 </div>
+
+

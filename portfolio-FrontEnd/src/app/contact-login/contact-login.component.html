@@ -1,25 +1,43 @@
 
-<div class="container-fluid text-center py-2">
+<div class="container-fluid py-2">
   <div class="row align-items-end">
-    <div class="col-xl-3 col-md-3 col-sm-4">
-      <img class="img-fluid img-thumbnail" src="https://trello.com/1/cards/636fb47e9843a200ac4ff506/attachments/636fb5e01fce8b03abdef341/previews/636fb5e11fce8b03abdef34d/download/argentina-programa.png" alt="Argentina-Programa">
+    <div class="col-3">
+      <img class="imagenArgentinaPrograma" src="https://trello.com/1/cards/636fb47e9843a200ac4ff506/attachments/636fb5e01fce8b03abdef341/previews/636fb5e11fce8b03abdef34d/download/argentina-programa.png" alt="Argentina-Programa">
     </div>
 
-    <div class="col-xl-6 col-md-4 col-sm-1"></div>
-
-    <div class="col-xl-3 col-md-5 col-sm-7">
-      <div class="row align-items-end">
-        <div class="col">
-          <div class="col">
-        </div><a href="./">Esp > </a>
-        </div>
-        <div class="col">
-          <button class="btn btn-primary">Contactos</button>
-        </div>
-        <div class="col">
-          <button class="btn btn-outline-primary">Ingresar</button>
-        </div>
+    <div class="col-9 text-end">
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <button type="button" class="btn btn-outline-primary">Esp...</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalContactos">Contactos</button>
+        <button type="button" class="btn btn-outline-primary">login</button>
       </div>
     </div>
   </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalContactos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Contactos</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row py-2" *ngFor="let contact of contacts">
+          <div class="col-2 text-center" >
+            <img class="iconosContactos" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="iconoGmail">
+          </div>
+          <div class="col-10">
+            <a href="{{ contact.name_contact }}" target="_blank">{{ contact.name_contact }}</a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+

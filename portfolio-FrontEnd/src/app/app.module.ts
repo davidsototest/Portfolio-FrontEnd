@@ -7,10 +7,10 @@ import { BannerPresentationComponent } from './banner-presentation/banner-presen
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
 import { EducationComponent } from './education/education.component';
 import { HardSoftSkillsComponent } from './hard-soft-skills/hard-soft-skills.component';
-import { ProjectsComponent } from './projects/projects.component';
 import { HobbiesComponent } from './hobbies/hobbies.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { ProjectssComponent } from './projectss/projectss.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +20,9 @@ import { FormsModule } from '@angular/forms';
     WorkExperienceComponent,
     EducationComponent,
     HardSoftSkillsComponent,
-    ProjectsComponent,
     HobbiesComponent,
-    FooterComponent
+    FooterComponent,
+    ProjectssComponent
   ],
   imports: [
     BrowserModule,

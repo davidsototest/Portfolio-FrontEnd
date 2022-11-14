@@ -1,19 +1,21 @@
-<div class="container-fluid text-center py-4">
+
+<br><br>
+<div class="container text-center py-1">
   <div class="row align-items-start">
     <div class="col-3 ">
-      <h3>Experiencias Laborales</h3>
+      <h5>Experiencias Laborales</h5>
     </div>
   </div>
 </div>
 
 
-<div class="container-fluid">
+<div class="container">
   <div class="row align-items-center py-3" *ngFor="let work of works">
-    <div class="col-3">
-      <img src="{{ work.urlPhoto }}" alt="Imagen-empresa">
+    <div class="col-3 text-center">
+      <img class="imagenWorkEducation" src="https://trello.com/1/cards/636fb47e9843a200ac4ff506/attachments/636fb5e01fce8b03abdef341/previews/636fb5e11fce8b03abdef34d/download/argentina-programa.png" alt="Imagen-empresa">
     </div>
-    <div class="col-9">
-      <h4> {{ work.name }} </h4>
+    <div class="col-8">
+      <h5> {{ work.name }} </h5>
       <h6> {{ work.job }} </h6>
       <h6> {{ work.duration }} </h6>
       <span> {{ work.chores }} </span>
