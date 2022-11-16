@@ -11,6 +11,7 @@ import { HobbiesComponent } from './hobbies/hobbies.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { ProjectssComponent } from './projectss/projectss.component';
+import { BannerPresentationUpdateComponent } from './banner-presentation-update/banner-presentation-update.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProjectssComponent } from './projectss/projectss.component';
     HardSoftSkillsComponent,
     HobbiesComponent,
     FooterComponent,
-    ProjectssComponent
+    ProjectssComponent,
+    BannerPresentationUpdateComponent
   ],
   imports: [
     BrowserModule,

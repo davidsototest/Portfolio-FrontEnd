@@ -1,5 +1,20 @@
 $primary: #10997e;
 $thumbnail-border-radius: 1.5em;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 400px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+.fondo {
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(220,220,249,1) 50%, rgba(255,255,255,1) 100%);;
+}
+
 :root{
   --esquinasImagenes: .5em;
   --tamanoIconos: 1.5em;
@@ -8,6 +23,11 @@ $thumbnail-border-radius: 1.5em;
 #fotoPerfil img{
   border-radius: 150em;
   margin-top: -6em;
+  width: 17em;
+}
+
+#fotoHobbies img{
+  border-radius: 150em;
   width: 90%;
 }
 
@@ -17,7 +37,7 @@ $thumbnail-border-radius: 1.5em;
 }
 
 .imagenArgentinaPrograma{
-  width: 10em;
+  width: 100%;
   border-radius: var(--esquinasImagenes);
 }
 
@@ -33,7 +53,7 @@ $thumbnail-border-radius: 1.5em;
 .col-10 a{
   text-decoration: none;
 }
-//////
+///////////////////////////////////////////////////////////////////
 
 
 
