@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { urlImgWorksExperience } from '../link-images/link-images';
 import { Work } from '../works.model';
 
 @Component({
@@ -7,6 +8,8 @@ import { Work } from '../works.model';
   styleUrls: ['./work-experience.component.css']
 })
 export class WorkExperienceComponent implements OnInit {
+  urlImgWorkExperience:string=urlImgWorksExperience;
+
   works: Work[]=[
     new Work("Estacion radial Viva 96.9 FM", "", " 2 anios", "Analista de sistemas", "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor"),
     new Work("Globons S.A.", "", " 1 anio (Actualmente)", "Analista de sistemas (Tester QA)", "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor"),

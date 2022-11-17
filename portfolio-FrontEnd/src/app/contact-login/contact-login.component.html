@@ -1,15 +1,26 @@
 
-<div class="container-fluid py-2">
+<div class="container-fluid py-2" id="fondoLoginBanner">
   <div class="row align-items-end">
     <div class="col-lg-2 col-sm-5">
-      <img class="imagenArgentinaPrograma" src="https://trello.com/1/cards/636fb47e9843a200ac4ff506/attachments/636fb5e01fce8b03abdef341/previews/636fb5e11fce8b03abdef34d/download/argentina-programa.png" alt="Argentina-Programa">
+      <img class="imagenArgentinaPrograma" src="{{ urlImgArgentinaPrograma }}" alt="logoArgentinaPrograma">
     </div>
 
     <div class="col-lg-10 text-end col-sm-7">
-      <div class="btn-group" role="group" aria-label="Basic outlined example">
-        <button type="button" class="btn btn-outline-primary">Esp...</button>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalContactos">Contactos</button>
-        <button type="button" class="btn btn-outline-primary">login</button>
+      <div class="row">
+        <div class="col">
+          <button class="btn">
+            <img id="iconEditar" src="../../assets/icons-svg/pencil.svg" alt="iconsPencel">
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-outline-primary">Esp...</button>
+            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalContactos">Contactos</button>
+            <button type="button" class="btn btn-outline-primary">login</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

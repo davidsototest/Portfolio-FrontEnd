@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { urlImgBanner, urlImgPerfil } from '../link-images/link-images';
 
 @Component({
   selector: 'app-banner-presentation',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banner-presentation.component.css']
 })
 export class BannerPresentationComponent implements OnInit {
-      presentation1: string[] = [
+    urlImgBanner:string=urlImgBanner;
+    urlImgPerfil: string=urlImgPerfil;
+
+
+    presentation1: string[] = [
       "David",
       "Soto",
       "Full Stack Developer Jr",

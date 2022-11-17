@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { urlImgProjects } from '../link-images/link-images';
 import { Projects } from '../projectss';
 
 @Component({
@@ -7,6 +8,8 @@ import { Projects } from '../projectss';
   styleUrls: ['./projectss.component.css']
 })
 export class ProjectssComponent implements OnInit {
+  urlImgProjects:string=urlImgProjects;
+
   projectss: Projects[]=[
     new Projects("Projecto 1", "", "", "Develeop FrontEnd Jr", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil consequuntur, quo rem voluptatibus aspernatur, odit, omnis repellendus perferendis illo fugit praesentium vero officiis voluptatem? Fuga adipisci facere quos aperiam at!"),
     new Projects("Projecto 2", "", "", "Develeop FrontEnd Jr", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil consequuntur, quo rem voluptatibus aspernatur, odit, omnis repellendus perferendis illo fugit praesentium vero officiis voluptatem? Fuga adipisci facere quos aperiam at!"),

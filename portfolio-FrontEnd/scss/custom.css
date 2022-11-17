@@ -32,7 +32,6 @@
 
 .imagenBanner {
   width: 100%;
-  border-radius: var(--esquinasImagenes);
 }
 
 .iconosContactos {
@@ -41,6 +40,14 @@
 
 .col-10 a {
   text-decoration: none;
+}
+
+#fondoLoginBanner {
+  background-color: #d8d3d3;
+}
+
+#iconEditar {
+  width: 2em;
 }
 
 .container2 .card:hover {
@@ -137,7 +144,7 @@ svg circle:nth-child(2) {
 }
 
 .card:nth-child(1) svg circle:nth-child(2) {
-  stroke-dashoffset: 220;
+  stroke-dashoffset: 132;
   stroke: rgb(255, 0, 0);
 }
 
