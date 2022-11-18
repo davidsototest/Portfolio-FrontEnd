@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact } from '../contacts';
 import { urlImgLogo } from '../link-images/link-images';
+import { LoginServiceService } from '../services-generals/login-service.service';
 
 @Component({
   selector: 'app-contact-login',
@@ -8,6 +9,8 @@ import { urlImgLogo } from '../link-images/link-images';
   styleUrls: ['./contact-login.component.css']
 })
 export class ContactLoginComponent implements OnInit {
+  constructor(private loginService:LoginServiceService) { }
+
   urlImgArgentinaPrograma:string=urlImgLogo;
 
   gmail:string="test@gmail.com";
@@ -15,8 +18,11 @@ export class ContactLoginComponent implements OnInit {
   discord:string="Discord.com";
   instagram:string="instagram.com";
 
+  estaLogueado(): boolean{
+    return this.loginService.estaLogueado();
+  }
 
-  constructor() { }
+
 
   ngOnInit(): void {
   }

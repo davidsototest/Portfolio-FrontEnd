@@ -13,8 +13,8 @@
       <img class="" src="{{ urlImgPerfil }}" alt="fotoPerfil"><br>
       <h2> {{ presentation1[0] + " " + presentation1[1] }} </h2>
     </div>
-    <div class="col-lg-8 text-lg-start col-sm-12 text-sm-center"><br>
-      <div class="row">
+    <div class="col-lg-8 text-lg-start col-sm-12 text-sm-center">
+      <div class="row" *ngIf="estaLogueado()">
         <div class="col text-end">
           <button class="btn">
             <img id="iconEditar" src="../../assets/icons-svg/pencil.svg" alt="iconsPencel">

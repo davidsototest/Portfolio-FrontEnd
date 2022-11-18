@@ -1,20 +1,20 @@
 
 <div class="container-fluid py-2" id="fondoLoginBanner">
-  <div class="row align-items-end">
-    <div class="col-lg-2 col-sm-5">
+  <div class="row align-items-center">
+    <div class="col-lg-2 col-sm-4">
       <img class="imagenArgentinaPrograma" src="{{ urlImgArgentinaPrograma }}" alt="logoArgentinaPrograma">
     </div>
 
-    <div class="col-lg-10 text-end col-sm-7">
+    <div class="col-lg-10 text-end col-sm-8">
       <div class="row">
         <div class="col">
-          <button class="btn">
+          <button class="btn" *ngIf="estaLogueado()">
             <img id="iconEditar" src="../../assets/icons-svg/pencil.svg" alt="iconsPencel">
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
+      <div class="row align-items-end">
+        <div class="col-12">
           <div class="btn-group" role="group" aria-label="Basic outlined example">
             <button type="button" class="btn btn-outline-primary">Esp...</button>
             <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalContactos">Contactos</button>

@@ -3,7 +3,7 @@ $thumbnail-border-radius: 1.5em;
 
 $grid-breakpoints: (
   xs: 0,
-  sm: 400px,
+  sm: 360px,
   md: 768px,
   lg: 992px,
   xl: 1200px,
@@ -22,8 +22,8 @@ $grid-breakpoints: (
 
 #fotoPerfil img{
   border-radius: 150em;
-  margin-top: -6em;
-  width: 17em;
+  margin-top: -5em;
+  width: 14em;
 }
 
 #fotoHobbies img{
