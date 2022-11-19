@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { urlImgProjects } from '../link-images/link-images';
 import { Projects } from '../projectss';
+import { LoginServiceService } from '../services-generals/login-service.service';
 
 @Component({
   selector: 'app-projectss',
@@ -21,7 +22,12 @@ export class ProjectssComponent implements OnInit {
 
 
 
-  constructor() { }
+    estaLogueado(): boolean{
+      return this.loginService.estaLogueado();
+    }
+
+
+  constructor(private loginService:LoginServiceService) { }
 
   ngOnInit(): void {
   }

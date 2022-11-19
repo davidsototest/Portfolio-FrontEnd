@@ -1,10 +1,19 @@
 
 <br><br>
 
-<div class="container text-center py-1">
-  <div class="row align-items-start">
+<div class="container">
+  <div class="row">
     <div class="col-lg-3 text-center col-sm-12">
       <h5>Educacion</h5>
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="estaLogueado()">
+  <div class="row align-items-start">
+    <div class="col-lg-11 text-end col-sm-12">
+      <button class="btn">
+        <img id="iconEditar" src="../../assets/icons-svg/pencil.svg" alt="iconsPencel">
+      </button>
     </div>
   </div>
 </div>

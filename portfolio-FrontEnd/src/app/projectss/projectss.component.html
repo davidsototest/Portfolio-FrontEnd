@@ -1,7 +1,6 @@
-<br><br>
+<br>
 
-
-<div class="container py-4">
+<div class="container">
   <div class="row align-items-start">
     <div class="col-lg-3 text-center col-sm-12">
       <h5>Participacion en Proyectos</h5>
@@ -9,13 +8,22 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-lg-11 text-end col-sm-12" *ngIf="estaLogueado()">
+      <button class="btn">
+        <img id="iconEditar" src="../../assets/icons-svg/pencil.svg" alt="iconsPencel">
+      </button>
+    </div>
+  </div>
+</div>
 
 <div class="container">
-  <div class="row align-items-center py-4" *ngFor="let project of projectss">
+  <div class="row align-items-center" *ngFor="let project of projectss">
     <div class="col-3 text-center">
       <img class="imagenWorkEducation" src="{{ urlImgProjects }}" alt="Imagen-empresa">
     </div>
-    <div class="col-8">
+    <div class="col-8 py-4">
       <h5> {{ project.name_project }} </h5>
       <h6> {{ project.stake_project }} </h6>
       <span> {{ project.description_project }} </span> <br>

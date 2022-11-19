@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginServiceService } from '../services-generals/login-service.service';
 
 
 @Component({
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hard-soft-skills.component.css']
 })
 export class HardSoftSkillsComponent implements OnInit {
+  valor3:number=50;
+
+  estaLogueado(): boolean{
+    return this.loginService.estaLogueado();
+  }
 
 
-  constructor() { }
+constructor(private loginService:LoginServiceService) { }
 
   ngOnInit(): void {
   }

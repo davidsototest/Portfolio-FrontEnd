@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { urlImgWorksExperience } from '../link-images/link-images';
+import { LoginServiceService } from '../services-generals/login-service.service';
 import { Work } from '../works.model';
 
 @Component({
@@ -16,9 +17,12 @@ export class WorkExperienceComponent implements OnInit {
     new Work("Example test", "", " 3 anio (Actualmente)", "Analista de sistemas (Tester QA)", "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor"),
   ];
 
-  constructor() {
-
+  estaLogueado(): boolean{
+    return this.loginService.estaLogueado();
   }
+
+
+constructor(private loginService:LoginServiceService) { }
 
   ngOnInit(): void {
   }

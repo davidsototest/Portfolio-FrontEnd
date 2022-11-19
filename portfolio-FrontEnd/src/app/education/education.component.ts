@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Education } from '../education';
 import { urlImgWorksExperience } from '../link-images/link-images';
+import { LoginServiceService } from '../services-generals/login-service.service';
 
 @Component({
   selector: 'app-education',
@@ -20,7 +21,11 @@ export class EducationComponent implements OnInit {
 
     urlPhoto: string= "https://trello.com/1/cards/636fb47e9843a200ac4ff506/attachments/636fb5e01fce8b03abdef341/previews/636fb5e11fce8b03abdef34d/download/argentina-programa.png";
 
-  constructor() { }
+    estaLogueado(): boolean{
+      return this.loginService.estaLogueado();
+    }
+
+    constructor(private loginService:LoginServiceService) { }
 
   ngOnInit(): void {
   }
