@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12" id="fondoLoginBanner">
-      <img class="imagenBanner" src="{{ urlImgBanner }}" alt="Imagen-banner">
+      <img class="imagenBanner" src="{{ bannerPresentation.url_banner }}" alt="Imagen-banner">
     </div>
   </div>
 </div>
@@ -10,8 +10,8 @@
 <div class="container">
   <div class="row align-items-start">
     <div class="col-lg-3 col-sm-12 text-sm-center" id="fotoPerfil">
-      <img class="" src="{{ urlImgPerfil }}" alt="fotoPerfil"><br>
-      <h2> {{ presentation1[0] + " " + presentation1[1] }} </h2>
+      <img class="" src="{{ bannerPresentation.url_photo }}" alt="fotoPerfil"><br>
+      <h2> {{ bannerPresentation.name }} </h2>
     </div>
     <div class="col-lg-8 text-lg-start col-sm-12 text-sm-center">
       <div class="row" *ngIf="estaLogueado()">
@@ -23,8 +23,8 @@
       </div><br>
       <div class="row">
         <div class="col">
-          <h3> {{ presentation1[2] }} </h3><br>
-          <span> {{ presentation1[3] }} </span>
+          <h3> {{ bannerPresentation.title }} </h3><br>
+          <span> {{ bannerPresentation.presentation }} </span>
         </div>
       </div>
     </div>

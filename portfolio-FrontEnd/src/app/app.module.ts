@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { ProjectssComponent } from './projectss/projectss.component';
 import { BannerPresentationUpdateComponent } from './banner-presentation-update/banner-presentation-update.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { BannerPresentationUpdateComponent } from './banner-presentation-update/
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
