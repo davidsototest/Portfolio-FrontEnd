@@ -22,7 +22,7 @@
 <div class="container">
   <div class="row align-items-center py-3" *ngFor="let education of educations">
     <div class="col-3 text-center">
-      <img class="imagenWorkEducation" src="{{ urlImgWorkExperience }}" alt="ImagenEmpresa">
+      <img class="imagenWorkEducation" src="{{ education.url_photo_education }}" alt="ImagenEmpresa">
     </div>
     <div class="col-9">
       <h5> {{ education.name_education }} </h5>

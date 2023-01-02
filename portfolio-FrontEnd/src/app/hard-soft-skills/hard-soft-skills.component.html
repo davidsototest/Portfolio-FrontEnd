@@ -20,65 +20,12 @@
 
 <div class="container py-3">
   <div class="row">
-    <div class="col-lg-3 text-center col-sm-6 py-2">
+    <div class="col-lg-3 text-center col-sm-6 py-4" *ngFor="let skill of skills">
       <div class="progress" id="progressBar">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Example 1px high" id="progressBarPorcentaje" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">90%</div>
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Example 1px high" id="progressBarPorcentaje" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"> {{skill.percentage_skill}}% </div>
       </div>
-      <h6>Html</h6>
-    </div>
-
-    <div class="col-lg-3 text-center col-sm-6 py-2">
-      <div class="progress" id="progressBar">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Example 1px high" id="progressBarPorcentaje" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">90%</div>
-      </div>
-      <h6>Ccs</h6>
-    </div>
-
-    <div class="col-lg-3 text-center col-sm-6 py-2">
-      <div class="progress" id="progressBar">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Example 1px high" id="progressBarPorcentaje" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">90%</div>
-      </div>
-      <h6>JavaScrip</h6>
-    </div>
-
-    <div class="col-lg-3 text-center col-sm-6 py-2">
-      <div class="progress" id="progressBar">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Example 1px high" id="progressBarPorcentaje" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">90%</div>
-      </div>
-      <h6>TypeScrip</h6>
-    </div>
+      <h6> {{skill.name_skill}} </h6>
   </div>
-
-<!-- Una linea nueva, separacion-->
-
-  <div class="row">
-    <div class="col-lg-3 text-center col-sm-6 py-2">
-      <div class="progress" id="progressBar">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Example 1px high" id="progressBarPorcentaje" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">90%</div>
-      </div>
-      <h6>Angular</h6>
-    </div>
-
-    <div class="col-lg-3 text-center col-sm-6 py-2">
-      <div class="progress" id="progressBar">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Example 1px high" id="progressBarPorcentaje" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">90%</div>
-      </div>
-      <h6>BBDD (Sql)</h6>
-    </div>
-
-    <div class="col-lg-3 text-center col-sm-6 py-2">
-      <div class="progress" id="progressBar">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Example 1px high" id="progressBarPorcentaje" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">90%</div>
-      </div>
-      <h6>BBDD (no Sql)</h6>
-    </div>
-
-    <div class="col-lg-3 text-center col-sm-6 py-2">
-      <div class="progress" id="progressBar">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Example 1px high" id="progressBarPorcentaje" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">90%</div>
-      </div>
-      <h6>Bootstrap</h6>
-    </div>
-  </div>
+</div>
 </div>
 
