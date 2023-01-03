@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
-import { urlImgBanner, urlImgPerfil } from '../link-images/link-images';
 import { BannerPresentation } from '../Models/BannerPresentation';
 import { LoginServiceService } from '../services-generals/login-service.service';
 import { ServiceBackEndService } from '../services-generals/service-back-end.service';
