@@ -8,7 +8,7 @@ export class LoginServiceService {
 
   constructor(private router:Router) { }
 
-  token: boolean = false;
+  token: boolean = true;
 
   estaLogueado(){
     return this.token;
