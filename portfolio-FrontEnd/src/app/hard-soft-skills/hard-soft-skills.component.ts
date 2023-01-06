@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SkillModel } from '../Models/Skill';
+import { ActualizarDBService } from '../services-generals/actualizar-db.service';
 import { LoginServiceService } from '../services-generals/login-service.service';
 import { ServiceBackEndService } from '../services-generals/service-back-end.service';
 
@@ -12,15 +14,49 @@ export class HardSoftSkillsComponent implements OnInit {
   valor3:number=50;
   skills: any[];
 
+  habilidad:string;
+  porcentaje:number;
+
   estaLogueado(): boolean{
     return this.loginService.estaLogueado();
   }
 
 
-constructor(private loginService:LoginServiceService, private serviceBackend:ServiceBackEndService) {
+constructor(
+  private loginService:LoginServiceService, 
+  private serviceBackend:ServiceBackEndService,
+  private actualizarDBservice: ActualizarDBService) {
   this.serviceBackend.getSkill().subscribe(resp=>{
     this.skills = resp;
   });
+ }
+
+ addDBSkill(){
+  let skillAdd = new SkillModel(this.habilidad, this.porcentaje); 
+  this.actualizarDBservice.addSkill(skillAdd);
+  alert("Se agrego la Habilidad: " + skillAdd.name_skill);
+  this.serviceBackend.getSkill().subscribe(resp=>{
+    this.skills = resp;
+
+    this.habilidad = "";
+    this.porcentaje = 0;
+  });
+ }
+
+ actualizarDBSkill(){
+  for (let i = 0; i <= this.skills.length; i++ ){
+    if(this.skills[i] != null){
+      this.actualizarDBservice.postSkill(this.skills[i]);
+    } else{
+      console.log("el indice del array: " + i + " esta vacio");
+    }
+  }
+  alert("Modificación Exitosa");
+ }
+
+ deleteDBSkill(id:number){
+  this.actualizarDBservice.deleteSkill(id);
+  alert (this.actualizarDBservice.respuestaDeleteSkill);
  }
 
   ngOnInit(): void {

@@ -31,7 +31,7 @@ constructor(
 
   this.serviceBackend.getWord().subscribe(resp=>{
     this.wordExperience = resp; 
-    console.log (resp);
+    console.log (resp); 
     
   });
  }
@@ -48,12 +48,16 @@ constructor(
  }
 
  addDB(){
-  let wordAdd = new WordModel(this.name, this.job, this.chores, this.duration, this.url_logo);
-  console.log (wordAdd); 
+  let wordAdd = new WordModel(this.name, this.job, this.chores, this.duration, this.url_logo); 
   this.actualizarDBservice.addWord(wordAdd);
   alert("Se agrego la Experiencia Laboral: " + wordAdd.name_business);
     this.serviceBackend.getWord().subscribe(resp=>{
     this.wordExperience = resp;
+    this.name = "";
+    this.job = "";
+    this.chores = "";
+    this.duration = "";
+    this.url_logo = "";
   });
  }
 
