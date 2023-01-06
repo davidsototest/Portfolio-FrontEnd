@@ -14,7 +14,7 @@ export class BannerPresentationComponent implements OnInit {
     bannerPresentation: BannerPresentation;
 
     estaLogueado(): boolean{
-      return this.loginService.estaLogueado();
+      return this.loginService.estaLogueado();  
     }
 
   constructor  (
