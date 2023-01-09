@@ -7,7 +7,7 @@ import { ServiceBackEndService } from '../services-generals/service-back-end.ser
 @Component({
   selector: 'app-work-experiences',
   templateUrl: './work-experiences.component.html',
-  styleUrls: ['./work-experiences.component.css']
+  styleUrls: ['./work-experiences.component.css'] 
 })
 export class WorkExperiencesComponent implements OnInit {
   wordExperience: any[];
@@ -57,13 +57,13 @@ constructor(
     this.job = "";
     this.chores = "";
     this.duration = "";
-    this.url_logo = "";
+    this.url_logo = ""; 
   });
  }
-
+ 
  deleteDB(id:number){
   this.actualizarDBservice.deleteWord(id);
-  alert (this.actualizarDBservice.respuestaDeleteWord);
+  alert (id);
  }
  
   ngOnInit(): void {

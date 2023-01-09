@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BannerPresentation } from '../Models/BannerPresentation';
+import { ContactModel } from '../Models/ContactsModel';
 
 @Injectable({
   providedIn: 'root'
@@ -57,8 +58,17 @@ export class ServiceBackEndService {
 
     getContact(){
       let contact = new HttpHeaders()
-      .set('Type-content', 'aplication/any[]')
-      return this.http.get<any[]>(this.url_contacts, {headers: contact});
+      .set('Type-content', 'aplication/ContactModel')
+      return this.http.get<ContactModel>(this.url_contacts, {headers: contact});
     }
 
+    // getContact(){
+    //   let contact = new HttpHeaders()
+    //   .set('Type-content', 'aplication/ContactModel')
+    //   return this.http.get<ContactModel>(this.url_contacts, {headers: contact});
+    // }
+
+    // public getContact(){
+    //   return this.http.get<ContactModel>(this.url_contacts);
+    //   }
 }

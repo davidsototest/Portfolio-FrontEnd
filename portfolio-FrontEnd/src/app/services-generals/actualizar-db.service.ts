@@ -2,7 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BannerPresentation } from '../Models/BannerPresentation';
+import { ContactModel } from '../Models/ContactsModel';
 import { EducationModel } from '../Models/Education';
+import { HobbieModel } from '../Models/HobbieModel';
+import { ProjectModel } from '../Models/ProjectModel';
 import { SkillModel } from '../Models/Skill';
 import { WordModel } from '../Models/Word';
 
@@ -14,8 +17,12 @@ export class ActualizarDBService {
   url_word: any;
   url_education: string;
   url_skill:string;
+  url_project:string;
+  url_hobbie:string;
+  url_contact:string;
 
-  respuestaPost:BannerPresentation;
+
+  respuestaPost:BannerPresentation; 
   respuestaWord:any;
   respuestaAddWord:WordModel;
   respuestaDeleteWord:any;
@@ -25,6 +32,13 @@ export class ActualizarDBService {
   respuestaAddSkill:SkillModel;
   respuestaPostSkill:any;
   respuestaDeleteSkill:any;
+  respuestaAddProject:ProjectModel;
+  respuestaPostProject:any;
+  respuestaDeleteProject:any;
+  respuestaAddHobbie: HobbieModel;
+  respuestaPostHobbie:any;
+  respuestaDeleteHobbie:any;
+  respuestaPostContact:ContactModel;
 
 
   constructor(private http: HttpClient) { 
@@ -32,6 +46,9 @@ export class ActualizarDBService {
     this.url_word = 'https://backendportfoliods.onrender.com/word';
     this.url_education = 'https://backendportfoliods.onrender.com/education';
     this.url_skill = 'https://backendportfoliods.onrender.com/skill';
+    this.url_project = 'https://backendportfoliods.onrender.com/project';
+    this.url_hobbie = 'https://backendportfoliods.onrender.com/hobbies';
+    this.url_contact = 'https://backendportfoliods.onrender.com/contact';
     }
 
     // BANNER y WORDs//
@@ -97,6 +114,54 @@ export class ActualizarDBService {
         return this.http.delete<number>(this.url_skill+"/"+id).subscribe(resp =>{
           this.respuestaDeleteSkill = resp;
         }) 
+      }
+
+      // PROJECTS  ////////////
+
+      public addProject (body:ProjectModel){
+        return this.http.post<ProjectModel>(this.url_project, body).subscribe(resp =>{
+          this.respuestaAddProject = resp;
+        })
+      }
+
+      public postProject(body:any){
+        return this.http.post<any>(this.url_project, body).subscribe(resp =>{
+          this.respuestaPostProject = resp;
+        })
+      }
+
+      public deleteProject(id:number){
+        return this.http.delete<number>(this.url_project+"/"+id).subscribe(resp =>{
+          this.respuestaDeleteProject = resp;
+        }) 
+      }
+
+      /// HOBBIESS /////////////
+
+      public addHobbie (body:HobbieModel){
+        return this.http.post<HobbieModel>(this.url_hobbie, body).subscribe(resp =>{
+          this.respuestaAddHobbie = resp;
+        })
+      }
+
+      public postHobbie(body:any){
+        return this.http.post<any>(this.url_hobbie, body).subscribe(resp =>{
+          this.respuestaPostHobbie = resp;
+        })
+      } 
+
+      public deleteHobbie(id:number){
+        return this.http.delete<number>(this.url_hobbie+"/"+id).subscribe(resp =>{
+          this.respuestaDeleteHobbie = resp;
+        }) 
+      }
+
+      // CONTACTS ////
+
+      public postContact(body:ContactModel){
+        return this.http.post<ContactModel>(this.url_contact, body).subscribe(resp =>{
+          this.respuestaPostContact = resp;
+        })
       }
 
   }
