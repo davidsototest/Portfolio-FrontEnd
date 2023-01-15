@@ -4,14 +4,14 @@
     <div class="col-lg-3 text-center col-sm-12">
       <h5>Experiencias Laborales </h5>
     </div>
-    <div class="col-lg-9 text-lg-start col-sm-12 text-sm-center">
-      <button class="btn" *ngIf="estaLogueado()">
+    <div class="col-lg-9 text-lg-start col-sm-12 text-sm-center" *ngIf="conectado()">
+      <button class="btn">
         <img id="iconEditar" src="../../assets/icons-svg/edit.svg" alt="iconsPencel" href="#modalWord" role="button" data-bs-toggle="modal" data-bs-target="#modalWord" />
       </button>
-      <button class="btn" *ngIf="estaLogueado()">
+      <button class="btn">
         <img id="iconEditar" src="../../assets/icons-svg/add.svg" alt="iconsPencel" href="#modalAdd" role="button" data-bs-toggle="modal" data-bs-target="#modalAdd" />
       </button>
-      <button class="btn" *ngIf="estaLogueado()">
+      <button class="btn">
         <img id="iconEditar" src="../../assets/icons-svg/delete.svg" alt="iconsPencel" href="#modalDelete" role="button" data-bs-toggle="modal" data-bs-target="#modalDelete" />
       </button>
     </div>
@@ -47,7 +47,7 @@
               <label for="recipient-name" class="col-form-label">Nombre de la Empresa:</label><br>
               <strong>{{wordDelete.name_business}}</strong><br>
               <label for="recipient-name" class="col-form-label">id: {{wordDelete.id_word}}
-                <button class="btn btn-light" *ngIf="estaLogueado()" style="color: brown;" (click)="deleteDB(wordDelete.id_word)">
+                <button class="btn btn-light" *ngIf="conectado" style="color: brown;" (click)="deleteDB(wordDelete.id_word)">
                   <img id="iconEditar" src="../../assets/icons-svg/delete.svg" alt="iconsPencel" />Eliminar
                 </button><br><br>
               </label>

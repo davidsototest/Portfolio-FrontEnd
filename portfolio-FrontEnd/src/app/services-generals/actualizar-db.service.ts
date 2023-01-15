@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BannerPresentation } from '../Models/BannerPresentation';
-import { ContactModel } from '../Models/ContactsModel';
 import { EducationModel } from '../Models/Education';
 import { HobbieModel } from '../Models/HobbieModel';
 import { ProjectModel } from '../Models/ProjectModel';
@@ -38,7 +37,7 @@ export class ActualizarDBService {
   respuestaAddHobbie: HobbieModel;
   respuestaPostHobbie:any;
   respuestaDeleteHobbie:any;
-  respuestaPostContact:ContactModel;
+  respuestaPostContact:any;
 
 
   constructor(private http: HttpClient) { 
@@ -156,11 +155,11 @@ export class ActualizarDBService {
         }) 
       }
 
-      // CONTACTS ////
+      // CONTACTS //// 
 
-      public postContact(body:ContactModel){
-        return this.http.post<ContactModel>(this.url_contact, body).subscribe(resp =>{
-          this.respuestaPostContact = resp;
+      public postContact(body:any){
+        return this.http.post<any>(this.url_contact, body).subscribe(resp =>{
+          this.respuestaPostContact = resp; 
         })
       }
 

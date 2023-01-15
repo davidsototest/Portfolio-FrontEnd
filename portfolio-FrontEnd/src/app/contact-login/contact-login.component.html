@@ -1,32 +1,52 @@
+<!-- firebase deploy --only hosting:frontendportfolio-e949c -->
 
 <div class="container-fluid py-2" id="fondoLoginBanner">
-  <div class="row align-items-center">
+  <div class="row align-items-end">
     <div class="col-lg-2 col-sm-4">
       <img class="imagenArgentinaPrograma" src="https://firebasestorage.googleapis.com/v0/b/frontendportfolio-e949c.appspot.com/o/AssetsPortfolioDS%2Fargentina-programa.png?alt=media&token=96a9236c-d33b-4a36-afa8-0298c5c023f7" alt="logoArgentinaPrograma"> 
       <!-- link de imagen de argprog llega vacia. -->
     </div>
-   
-    <div class="col-lg-10 text-end col-sm-8">
-      <div class="row">
-        <div class="col">
-          <button class="btn" *ngIf="estaLogueado()">
-            <img id="iconEditar" src="../../assets/icons-svg/edit.svg" alt="iconsPencel" href="#modalEdit" role="button" data-bs-toggle="modal" data-bs-target="#modalEdit" />
-          </button>
+      <div class="col-lg-3 text-end offset-lg-7 col-sm-8">
+
+        <button class="btn" *ngIf="conectado()">
+          <img id="iconEditar" src="../../assets/icons-svg/edit.svg" alt="iconsPencel" href="#modalEdit" role="button" data-bs-toggle="modal" data-bs-target="#modalEdit" />
+        </button>
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <button type="button" class="btn btn-outline-primary">Esp...</button>
+          <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalContactos">Contactos</button>
+          <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalLogin" *ngIf="!conectado()">Connect</button>
+          <button type="button" *ngIf="conectado()" class="btn btn-outline-primary"  (click)="signOut()">SignOut</button>
+        </div> 
+                   
+      </div>
+  </div>
+</div>
+
+<!-- Model Login -->
+<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" [(ngModel)]="form.email">
+          <label for="emailInput">Usuario</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="passwordInput" placeholder="Password" [(ngModel)]="form.password">
+          <label for="passwordInput">Contraseña</label>
         </div>
       </div>
-      <div class="row align-items-end">
-        <div class="col-12">
-          <div class="btn-group" role="group" aria-label="Basic outlined example">
-            <button type="button" class="btn btn-outline-primary">Esp...</button>
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalContactos">Contactos</button>
-            <button type="button" class="btn btn-outline-primary">login</button>
-          </div>
-        </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary"  data-bs-dismiss="modal" (click)="loginFirebase()">Iniciar Sesión</button>
       </div>
     </div>
   </div>
 </div>
-
 
 <!-- //Modal Contactos// -->
 <div class="modal fade" id="modalContactos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -36,41 +56,41 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Contactos</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" *ngFor="let contact of contacts">
 
         <div class="row py-2">
           <div class="col-2 text-center" >
-            <img class="iconosContactos" src="https://trello.com/1/cards/63722a34edf18801cd143190/attachments/63723c09cd331d0243d7599f/previews/63723c09cd331d0243d759b6/download/icono_gmail.png" alt="iconogmail">
+            <img class="iconosContactos" src="https://firebasestorage.googleapis.com/v0/b/frontendportfolio-e949c.appspot.com/o/IconsRedesSociales%2Fgmail.svg?alt=media&token=58b472f7-f2a0-4457-8688-749c9fdea314" alt="iconogmail">
           </div>
           <div class="col-10">
-            <a href="{{ contacts.email_contact }}" target="_blank"> {{ contacts.email_contact }}  </a>
+            <a href="{{ contact.email_contact }}" target="_blank"> {{ contact.email_contact }}  </a>
           </div>
         </div>
-          <h1>hola {{ contacts.id_contact }}</h1>
+        
         <div class="row py-2">
           <div class="col-2 text-center" >
-            <img class="iconosContactos" src="https://trello.com/1/cards/63722a34edf18801cd143190/attachments/63723c0bf7fd17059de385e2/previews/63723c0cf7fd17059de38626/download/icono_linkedin.png" alt="iconoLinkedin">
+            <img class="iconosContactos" src="https://firebasestorage.googleapis.com/v0/b/frontendportfolio-e949c.appspot.com/o/IconsRedesSociales%2Flinkedin.svg?alt=media&token=46513152-c77b-48a9-8675-badd6f31f6a8" alt="iconoLinkedin">
           </div>
           <div class="col-10">
-            <a href="{{ contacts.linkedin_contact }}" target="_blank"> {{ contacts.linkedin_contact }} </a>
-          </div>
-        </div>
-
-        <div class="row py-2">
-          <div class="col-2 text-center" >
-            <img class="iconosContactos" src="https://trello.com/1/cards/63722a34edf18801cd143190/attachments/63723c0a0b14d403283c0ee2/previews/63723c0a0b14d403283c1002/download/icono_instagram.png" alt="iconoInstagram">
-          </div>
-          <div class="col-10">
-            <a href="{{ contacts.instagram_contact }}" target="_blank"> {{ contacts.instagram_contact }}  </a>
+            <a href="{{ contact.linkedin_contact }}" target="_blank"> {{ contact.linkedin_contact }} </a>
           </div>
         </div>
 
         <div class="row py-2">
           <div class="col-2 text-center" >
-            <img class="iconosContactos" src="https://trello.com/1/cards/63722a34edf18801cd143190/attachments/63723c08ee6c6c02d8505fbf/previews/63723c08ee6c6c02d8505fc9/download/icono_discord.png" alt="iconoDiscord">
+            <img class="iconosContactos" src="https://firebasestorage.googleapis.com/v0/b/frontendportfolio-e949c.appspot.com/o/IconsRedesSociales%2Finstagram.svg?alt=media&token=a696dab6-75ee-4ebe-bcae-b7d0f1e51011" alt="iconoInstagram">
           </div>
           <div class="col-10">
-            <a href="{{ contacts.discord_contact }}" target="_blank"> {{ contacts.discord_contact }} </a>
+            <a href="{{ contact.instagram_contact }}" target="_blank"> {{ contact.instagram_contact }}  </a>
+          </div>
+        </div>
+
+        <div class="row py-2">
+          <div class="col-2 text-center" >
+            <img class="iconosContactos" src="https://firebasestorage.googleapis.com/v0/b/frontendportfolio-e949c.appspot.com/o/IconsRedesSociales%2Fdiscord.svg?alt=media&token=c6355755-470f-4d0f-bad6-f11749262619" alt="iconoDiscord">
+          </div>
+          <div class="col-10">
+            <a href="{{ contact.discord_contact }}" target="_blank"> {{ contact.discord_contact }} </a>
           </div>
         </div><br>
 
@@ -87,35 +107,35 @@
 
 <div class="modal" id="modalEdit" aria-hidden="true" aria-labelledby="modalEditLabel" tabindex="-1">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content" *ngFor="let contac of contacts">
       <div class="modal-header">
         <h5 class="modal-title">Editar Contactos</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" >
         
         <div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Correo Electronico:</label>
-            <input type="text"  class="form-control" id="recipient-name" [(ngModel)]="contacts.email_contact" />
+            <input type="text"  class="form-control" id="recipient-name" [(ngModel)]="contac.email_contact" />
           </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Linkedin:</label>
-            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="contacts.linkedin_contact" />
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="contac.linkedin_contact" />
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Instagram:</label>
-            <input class="form-control" id="message-text" [(ngModel)]="contacts.instagram_contact" />
+            <input class="form-control" id="message-text" [(ngModel)]="contac.instagram_contact" />
           </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Discord:</label>
-            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="contacts.discord_contact" />
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="contac.discord_contact" />
           </div>
         </div>
       </div>
       
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary"  data-bs-dismiss="modal" (click)="actualizarDBContact()">Guardar Cambios</button>
+        <button type="submit" class="btn btn-primary"  data-bs-dismiss="modal" (click)="actualizarDBContact(contac)">Guardar Cambios</button>
       </div>
     </div>  
   </div>

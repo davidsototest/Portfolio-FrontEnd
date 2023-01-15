@@ -18,11 +18,7 @@ export class WorkExperiencesComponent implements OnInit {
   job:string;
   chores:string;
   duration:string;
-  url_logo:string;
-  
-  estaLogueado(): boolean{
-    return this.loginService.estaLogueado();
-  }
+  url_logo:string;  
 
 constructor(
   private loginService:LoginServiceService, 
@@ -31,9 +27,14 @@ constructor(
 
   this.serviceBackend.getWord().subscribe(resp=>{
     this.wordExperience = resp; 
-    console.log (resp); 
+    console.log (resp);  
+    
     
   });
+ }
+
+ conectado(){
+  return this.loginService.estaLogueado();
  }
 
  actualizarDB(){
@@ -67,7 +68,7 @@ constructor(
  }
  
   ngOnInit(): void {
-    
+   
   }
 
 }

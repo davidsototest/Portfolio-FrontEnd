@@ -17,9 +17,9 @@ hobbies: any[];
 name:string;
 urlFoto:string;
 
-estaLogueado(): boolean{
+conectado(){
   return this.loginService.estaLogueado();
-}
+ }
 
 constructor(
   private loginService:LoginServiceService, 

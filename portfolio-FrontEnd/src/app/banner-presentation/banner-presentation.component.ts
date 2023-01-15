@@ -13,9 +13,10 @@ import { ServiceBackEndService } from '../services-generals/service-back-end.ser
 export class BannerPresentationComponent implements OnInit {
     bannerPresentation: BannerPresentation;
 
-    estaLogueado(): boolean{
-      return this.loginService.estaLogueado();  
-    }
+    // estaLogueado(): boolean{
+    //   this.loginService.estaLogueado();
+    //   return this.loginService.retorno; 
+    // }
 
   constructor  (
     private loginService:LoginServiceService,
@@ -24,13 +25,19 @@ export class BannerPresentationComponent implements OnInit {
     ) {
         this.serviceBackend.getBanner().subscribe(resp=>{
           this.bannerPresentation = resp;
+          
         });
       
+     }
+     //estados de los botones editar
+     conectado(){
+      return this.loginService.estaLogueado();
      }
 
     guardarBanner(){
       this.actualizarDB.postBanner(this.bannerPresentation);
       alert("Cambios Guardados: " + this.actualizarDB.respuestaPost.id + " " + this.actualizarDB.respuestaPost.name);
+      
     }
 
   ngOnInit(): void {

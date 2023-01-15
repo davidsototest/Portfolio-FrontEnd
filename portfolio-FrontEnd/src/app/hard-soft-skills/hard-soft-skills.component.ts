@@ -17,9 +17,9 @@ export class HardSoftSkillsComponent implements OnInit {
   habilidad:string;
   porcentaje:number;
 
-  estaLogueado(): boolean{
+  conectado(){
     return this.loginService.estaLogueado();
-  }
+   }
 
 
 constructor(

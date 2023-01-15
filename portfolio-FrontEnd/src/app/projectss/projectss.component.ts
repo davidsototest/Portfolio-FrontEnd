@@ -19,9 +19,9 @@ export class ProjectssComponent implements OnInit {
   urlFotoProject:string;
   urlProject:string;
 
-    estaLogueado(): boolean{
-      return this.loginService.estaLogueado();
-    }
+  conectado(){
+    return this.loginService.estaLogueado();
+   }
 
   constructor(
     private loginService:LoginServiceService, 

@@ -20,9 +20,9 @@ export class EducationComponent implements OnInit {
   academia:string;
   url_logo:string;
   
-    estaLogueado(): boolean{
-      return this.loginService.estaLogueado();
-    }
+  conectado(){
+    return this.loginService.estaLogueado();
+   }
 
     constructor(
       private loginService:LoginServiceService, 

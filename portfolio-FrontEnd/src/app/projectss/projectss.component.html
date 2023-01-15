@@ -5,14 +5,14 @@
     <div class="col-lg-3 text-center col-sm-12">
       <h5>Participacion en Proyectos</h5>
     </div>
-    <div class="col-lg-9 text-lg-start col-sm-12 text-sm-center">
-      <button class="btn" *ngIf="estaLogueado()">
+    <div class="col-lg-9 text-lg-start col-sm-12 text-sm-center" *ngIf="conectado()">
+      <button class="btn">
         <img id="iconEditar" src="../../assets/icons-svg/edit.svg" alt="iconsPencel" href="#modalProject" role="button" data-bs-toggle="modal" data-bs-target="#modalProject" />
       </button>
-      <button class="btn" *ngIf="estaLogueado()">
+      <button class="btn">
         <img id="iconEditar" src="../../assets/icons-svg/add.svg" alt="iconsPencel" href="#modalAddProject" role="button" data-bs-toggle="modal" data-bs-target="#modalAddProject" />
       </button>
-      <button class="btn" *ngIf="estaLogueado()">
+      <button class="btn">
         <img id="iconEditar" src="../../assets/icons-svg/delete.svg" alt="iconsPencel" href="#modalDeleteProject" role="button" data-bs-toggle="modal" data-bs-target="#modalDeleteProject" />
       </button>
     </div>
@@ -51,7 +51,7 @@
             <label for="recipient-name" class="col-form-label">Nombre del Proyecto:</label><br>
             <strong>{{projectDelete.name_project}}</strong><br>
             <label for="recipient-name" class="col-form-label">id: {{projectDelete.id_project}}
-              <button class="btn btn-light" *ngIf="estaLogueado()" style="color: brown;" (click)="deleteDBProject(projectDelete.id_project)">
+              <button class="btn btn-light" style="color: brown;" (click)="deleteDBProject(projectDelete.id_project)">
                 <img id="iconEditar" src="../../assets/icons-svg/delete.svg" alt="iconsPencel" />Eliminar
               </button><br><br>
             </label>

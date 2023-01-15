@@ -6,14 +6,14 @@
       <h5>Pasatiempo</h5>
     </div>
   </div>
-  <div class="col text-center">
-    <button class="btn" *ngIf="estaLogueado()">
+  <div class="col text-center" *ngIf="conectado()">
+    <button class="btn">
       <img id="iconEditar" src="../../assets/icons-svg/edit.svg" alt="iconsPencel" href="#modalHobbie" role="button" data-bs-toggle="modal" data-bs-target="#modalHobbie" />
     </button>
-    <button class="btn" *ngIf="estaLogueado()">
+    <button class="btn">
       <img id="iconEditar" src="../../assets/icons-svg/add.svg" alt="iconsPencel" href="#modalAddHobbie" role="button" data-bs-toggle="modal" data-bs-target="#modalAddHobbie" />
     </button>
-    <button class="btn" *ngIf="estaLogueado()">
+    <button class="btn">
       <img id="iconEditar" src="../../assets/icons-svg/delete.svg" alt="iconsPencel" href="#modalDeleteHobbie" role="button" data-bs-toggle="modal" data-bs-target="#modalDeleteHobbie" />
     </button>
   </div>
@@ -46,7 +46,7 @@
             <label for="recipient-name" class="col-form-label">Nombre del Pasatiempo:</label><br>
             <strong>{{hobbiesDelete.name_hobbies}}</strong><br>
             <label for="recipient-name" class="col-form-label">id: {{hobbiesDelete.id_hobbies}}
-              <button class="btn btn-light" *ngIf="estaLogueado()" style="color: brown;" (click)="deleteDBHobbie(hobbiesDelete.id_hobbies)">
+              <button class="btn btn-light" style="color: brown;" (click)="deleteDBHobbie(hobbiesDelete.id_hobbies)">
                 <img id="iconEditar" src="../../assets/icons-svg/delete.svg" alt="iconsPencel" />Eliminar
               </button><br><br>
             </label>

@@ -13,24 +13,30 @@ import { ProjectssComponent } from './projectss/projectss.component';
 import { BannerPresentationUpdateComponent } from './banner-presentation-update/banner-presentation-update.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WorkExperiencesComponent } from './work-experiences/work-experiences.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactLoginComponent,
     BannerPresentationComponent,
     EducationComponent,
     HardSoftSkillsComponent,
     HobbiesComponent,
     FooterComponent,
     ProjectssComponent,
+    ContactLoginComponent,
     BannerPresentationUpdateComponent,
     WorkExperiencesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]
