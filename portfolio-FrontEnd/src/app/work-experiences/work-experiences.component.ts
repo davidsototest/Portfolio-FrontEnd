@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WordModel } from '../Models/Word';
 import { ActualizarDBService } from '../services-generals/actualizar-db.service';
+import { AlertasService } from '../services-generals/alertas.service';
 import { LoginServiceService } from '../services-generals/login-service.service';
 import { ServiceBackEndService } from '../services-generals/service-back-end.service';
 
@@ -23,12 +24,13 @@ export class WorkExperiencesComponent implements OnInit {
 constructor(
   private loginService:LoginServiceService, 
   private serviceBackend:ServiceBackEndService,
-  private actualizarDBservice: ActualizarDBService) {
+  private actualizarDBservice: ActualizarDBService,
+  private alerta:AlertasService) {
 
   this.serviceBackend.getWord().subscribe(resp=>{
     this.wordExperience = resp; 
     console.log (resp);  
-    
+     
     
   });
  }
@@ -45,13 +47,13 @@ constructor(
       console.log("el indice del array: " + i + " esta vacio");
     }
   }
-  alert("Modificación Exitosa");
+  this.alerta.alertaUpdate("Experiencia Laboral");
  }
 
  addDB(){
   let wordAdd = new WordModel(this.name, this.job, this.chores, this.duration, this.url_logo); 
   this.actualizarDBservice.addWord(wordAdd);
-  alert("Se agrego la Experiencia Laboral: " + wordAdd.name_business);
+  this.alerta.alertaAdd(wordAdd.name_business);
     this.serviceBackend.getWord().subscribe(resp=>{
     this.wordExperience = resp;
     this.name = "";
@@ -64,7 +66,7 @@ constructor(
  
  deleteDB(id:number){
   this.actualizarDBservice.deleteWord(id);
-  alert (id);
+  this.alerta.alertaDelete("Experiencia Laboral")
  }
  
   ngOnInit(): void {

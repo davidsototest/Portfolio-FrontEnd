@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { urlImgHobbies } from '../link-images/link-images';
 import { HobbieModel } from '../Models/HobbieModel';
 import { ActualizarDBService } from '../services-generals/actualizar-db.service';
+import { AlertasService } from '../services-generals/alertas.service';
 import { LoginServiceService } from '../services-generals/login-service.service';
 import { ServiceBackEndService } from '../services-generals/service-back-end.service';
 
@@ -24,7 +26,8 @@ conectado(){
 constructor(
   private loginService:LoginServiceService, 
   private serviceBackend:ServiceBackEndService,
-  private actualizarDBservice: ActualizarDBService) {
+  private actualizarDBservice: ActualizarDBService,
+  private alerta:AlertasService) {
   this.serviceBackend.getHobbies().subscribe(resp=>{
     this.hobbies = resp; 
   }); 
@@ -33,13 +36,7 @@ constructor(
  addDBHobbie(){
   let hobbieAdd = new HobbieModel(this.name, this.urlFoto); 
   this.actualizarDBservice.addHobbie(hobbieAdd);
-  alert("Se agrego el Pasatiempo: " + hobbieAdd.name_hobbies);
-  this.serviceBackend.getHobbies().subscribe(resp=>{
-    this.hobbies = resp;
-
-    this.name = "";
-    this.urlFoto = "";
-  });
+  this.alerta.alertaAdd(hobbieAdd.name_hobbies);
  }
 
  actualizarDBHobbies(){
@@ -50,12 +47,12 @@ constructor(
       console.log("el indice del array: " + i + " esta vacio");
     }
   }
-  alert("Modificación Exitosa");
+  this.alerta.alertaUpdate("Pasatiempo");
  }
 
  deleteDBHobbie(id:number){
   this.actualizarDBservice.deleteHobbie(id);
-  alert (this.actualizarDBservice.respuestaDeleteHobbie);
+  this.alerta.alertaDelete("Pasatiempo");
  }
 
   ngOnInit(): void {

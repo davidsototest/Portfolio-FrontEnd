@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { urlImgProjects } from '../link-images/link-images';
 import { ProjectModel } from '../Models/ProjectModel';
 import { Projects } from '../projectss';
 import { ActualizarDBService } from '../services-generals/actualizar-db.service';
+import { AlertasService } from '../services-generals/alertas.service';
 import { LoginServiceService } from '../services-generals/login-service.service';
 import { ServiceBackEndService } from '../services-generals/service-back-end.service';
 
@@ -26,7 +28,8 @@ export class ProjectssComponent implements OnInit {
   constructor(
     private loginService:LoginServiceService, 
     private serviceBackend:ServiceBackEndService,
-    private actualizarDBservice: ActualizarDBService) {
+    private actualizarDBservice: ActualizarDBService,
+    private alerta:AlertasService) {
     this.serviceBackend.getProject().subscribe(resp=>{
       this.projects = resp;
     });
@@ -35,7 +38,8 @@ export class ProjectssComponent implements OnInit {
    addDBProject(){
     let projectAdd = new ProjectModel(this.name, this.descripProject, this.urlFotoProject, this.urlProject); 
     this.actualizarDBservice.addProject(projectAdd);
-    alert("Se agrego Proyecto: " + projectAdd.name_project);
+    this.alerta.alertaAdd(projectAdd.name_project);
+    
     this.serviceBackend.getProject().subscribe(resp=>{
       this.projects = resp;
   
@@ -54,12 +58,12 @@ export class ProjectssComponent implements OnInit {
         console.log("el indice del array: " + i + " esta vacio");
       }
     }
-    alert("Modificación Exitosa");
+    this.alerta.alertaUpdate("Proyecto");
    }
 
    deleteDBProject(id:number){
     this.actualizarDBservice.deleteProject(id);
-    alert (this.actualizarDBservice.respuestaDeleteProject);
+    this.alerta.alertaDelete("Proyecto");
    }
 
   ngOnInit(): void {

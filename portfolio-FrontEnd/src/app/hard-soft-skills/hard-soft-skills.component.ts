@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { SkillModel } from '../Models/Skill';
 import { ActualizarDBService } from '../services-generals/actualizar-db.service';
+import { AlertasService } from '../services-generals/alertas.service';
 import { LoginServiceService } from '../services-generals/login-service.service';
 import { ServiceBackEndService } from '../services-generals/service-back-end.service';
 
@@ -25,7 +27,8 @@ export class HardSoftSkillsComponent implements OnInit {
 constructor(
   private loginService:LoginServiceService, 
   private serviceBackend:ServiceBackEndService,
-  private actualizarDBservice: ActualizarDBService) {
+  private actualizarDBservice: ActualizarDBService,
+  private alerta:AlertasService) {
   this.serviceBackend.getSkill().subscribe(resp=>{
     this.skills = resp;
   });
@@ -34,7 +37,8 @@ constructor(
  addDBSkill(){
   let skillAdd = new SkillModel(this.habilidad, this.porcentaje); 
   this.actualizarDBservice.addSkill(skillAdd);
-  alert("Se agrego la Habilidad: " + skillAdd.name_skill);
+  this.alerta.alertaAdd(skillAdd.name_skill);
+  
   this.serviceBackend.getSkill().subscribe(resp=>{
     this.skills = resp;
 
@@ -51,12 +55,12 @@ constructor(
       console.log("el indice del array: " + i + " esta vacio");
     }
   }
-  alert("Modificación Exitosa");
+  this.alerta.alertaUpdate("Habilidad");
  }
 
  deleteDBSkill(id:number){
   this.actualizarDBservice.deleteSkill(id);
-  alert (this.actualizarDBservice.respuestaDeleteSkill);
+  this.alerta.alertaDelete("Habilidad");
  }
 
   ngOnInit(): void {

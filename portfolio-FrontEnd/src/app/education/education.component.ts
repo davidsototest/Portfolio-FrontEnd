@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Education } from '../education';
-import { urlImgWorksExperience } from '../link-images/link-images';
 import { EducationModel } from '../Models/Education';
 import { ActualizarDBService } from '../services-generals/actualizar-db.service';
+import { AlertasService } from '../services-generals/alertas.service';
 import { LoginServiceService } from '../services-generals/login-service.service';
 import { ServiceBackEndService } from '../services-generals/service-back-end.service';
 
@@ -27,7 +26,8 @@ export class EducationComponent implements OnInit {
     constructor(
       private loginService:LoginServiceService, 
       private serviceBackend:ServiceBackEndService,
-      private actualizarDBservice: ActualizarDBService) { 
+      private actualizarDBservice: ActualizarDBService,
+      private alerta:AlertasService) { 
       this.serviceBackend.getEducation().subscribe(resp=>{ 
         this.educations = resp;
       });
@@ -36,7 +36,8 @@ export class EducationComponent implements OnInit {
     addEdu(){
       let eduAdd = new EducationModel(this.name, this.nivel, this.duration, this.academia, this.url_logo);
       this.actualizarDBservice.addEdu(eduAdd);
-      alert("Se agrego una nueva Educación: " + eduAdd.name_education);
+      this.alerta.alertaAdd("Educación")
+
       this.serviceBackend.getEducation().subscribe(resp=>{ 
         this.educations = resp;
         this.name = "";
@@ -55,12 +56,12 @@ export class EducationComponent implements OnInit {
           console.log("el indice del array: " + i + " esta vacio");
         }
       }
-      alert("Modificación Exitosa");
+      this.alerta.alertaUpdate("Educación");
     }
 
     deleteDBEdu(id:number){
       this.actualizarDBservice.deleteEdu(id);
-      alert (this.actualizarDBservice.respuestaDeleteEdu);
+      this.alerta.alertaDelete("Educación")
      }
 
 

@@ -5,6 +5,7 @@ import { ServiceBackEndService } from '../services-generals/service-back-end.ser
 import { Auth, getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { AuthFirebaseService } from '../services-generals/auth-firebase.service';
 import Swal from 'sweetalert2';
+import { AlertasService } from '../services-generals/alertas.service';
 // import { AuthFirebaseService } from '../services-generals/auth-firebase.service';
 
 @Component({
@@ -24,7 +25,8 @@ export class ContactLoginComponent implements OnInit {
     private loginService:LoginServiceService, 
     private serviceBackend:ServiceBackEndService,
     private actualizarDBservice: ActualizarDBService,
-    private auth:AuthFirebaseService 
+    private auth:AuthFirebaseService,
+    private alerta:AlertasService
     ) {
     this.serviceBackend.getContact().subscribe(resp=>{
       this.contacts = resp;
@@ -39,34 +41,10 @@ export class ContactLoginComponent implements OnInit {
       this.loginService.loginFirebaseService(this.form.email, this.form.password);
 
     } else if (this.form.email.length <= 8){
-      Swal.fire({
-        icon: 'error',
-        title: 'Ingresaste un email Invalido!',
-        text: 'Corrija e intente nuevamente',
-        showConfirmButton: true,
-        confirmButtonText: 'Cerrar',
-        showClass: {
-          popup: 'animate__animated animate__fadeInDown'
-        },
-        hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
-        }
-      });
+      this.alerta.alertaEmail();
 
     } else if (this.form.password.length < 6) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Ingresaste una contrasena Invalida!',
-        text: 'Minimo 6 caracteres',
-        showConfirmButton: true,
-        confirmButtonText: 'Cerrar',
-        showClass: {
-          popup: 'animate__animated animate__fadeInDown'
-        },
-        hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
-        }
-      });
+     this.alerta.alertaContrasena();
     } 
   }
     
@@ -93,7 +71,7 @@ export class ContactLoginComponent implements OnInit {
 
   actualizarDBContact(contac:any){
     this.actualizarDBservice.postContact(contac);
-      alert(this.actualizarDBservice.respuestaPostContact);
+    this.alerta.alertaUpdate("Contactos");   
   }
 
 

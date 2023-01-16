@@ -4,6 +4,8 @@ import { BannerPresentation } from '../Models/BannerPresentation';
 import { ActualizarDBService } from '../services-generals/actualizar-db.service';
 import { LoginServiceService } from '../services-generals/login-service.service';
 import { ServiceBackEndService } from '../services-generals/service-back-end.service';
+import Swal from 'sweetalert2'
+import { AlertasService } from '../services-generals/alertas.service';
 
 @Component({
   selector: 'app-banner-presentation',
@@ -21,10 +23,11 @@ export class BannerPresentationComponent implements OnInit {
   constructor  (
     private loginService:LoginServiceService,
     private serviceBackend:ServiceBackEndService,
-    private actualizarDB: ActualizarDBService
+    private actualizarDB: ActualizarDBService,
+    private alerta:AlertasService
     ) {
         this.serviceBackend.getBanner().subscribe(resp=>{
-          this.bannerPresentation = resp;
+          this.bannerPresentation = resp; 
           
         });
       
@@ -36,8 +39,7 @@ export class BannerPresentationComponent implements OnInit {
 
     guardarBanner(){
       this.actualizarDB.postBanner(this.bannerPresentation);
-      alert("Cambios Guardados: " + this.actualizarDB.respuestaPost.id + " " + this.actualizarDB.respuestaPost.name);
-      
+      this.alerta.alertaUpdate("Banner Principal")      
     }
 
   ngOnInit(): void {
