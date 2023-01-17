@@ -25,8 +25,18 @@ $thumbnail-border-radius: 1.5em;
 100% {transform: rotate(360deg);}
 } 
 
-
 ///////////////////////////
+/// 
+h6, span, p{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--fontParrafos);
+}
+
+h2, h3, h5{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: var(--fontTitle);
+}
+
 $grid-breakpoints: (
   xs: 0,
   sm: 360px,
@@ -37,19 +47,34 @@ $grid-breakpoints: (
 );
 
 .fondo {
-  background: rgb(255,255,255);
-  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(220,220,249,1) 50%, rgba(255,255,255,1) 100%);;
+  background: var(--colorFondo);
+}
+
+#pestania{
+  background-color: var(--fondoPestania);
+  border-top-left-radius: var(--esquinasImagenes);
+  border-top-right-radius: var(--esquinasImagenes);
 }
 
 :root{
   --esquinasImagenes: .5em;
   --tamanoIconos: 1.5em;
+  --colorFondo:  #f3f3e4;
+  --fontTitle:  #474742;
+  --fontParrafos:  #62625c;
+  --fondoLogin: #1f1f1f;
+  --fondoPestania: rgba(104, 99, 99, 0.081);
 }
+
+
 
 #fotoPerfil img{
   border-radius: 150em;
-  margin-top: -5em;
-  width: 14em;
+  margin-top: -4em;
+  width: 80%;
+  border-color: var(--colorFondo);
+  border-style: solid;
+  border-width: 15px;
 }
 
 #fotoHobbies img{
@@ -80,7 +105,7 @@ $grid-breakpoints: (
 }
 
 #fondoLoginBanner{
-  background-color: #d8d3d3;
+  background-color: var(--fondoLogin);
 }
 
 #iconEditar{

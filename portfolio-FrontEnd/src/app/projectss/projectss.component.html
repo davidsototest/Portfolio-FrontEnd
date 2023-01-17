@@ -1,6 +1,6 @@
 <br>
 
-<div class="container">
+<div class="container"  id="pestania">
   <div class="row align-items-center">
     <div class="col-lg-3 text-center col-sm-12">
       <h5>Participacion en Proyectos</h5>
@@ -29,8 +29,8 @@
     <div class="col-8 py-4">
       <h5> {{ project.name_project }} </h5>
       <span> {{ project.description_project }} </span> <br>
-      <div class="py-3">
-        <button class="btn btn-primary" >Ver Proyecto</button>
+      <div class="py-3" id="botonLink">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMentenimiento">Ver Proyecto</button>
       </div>
     </div>
   </div>
@@ -144,5 +144,29 @@
         <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="addDBProject()">Guardar Cambios</button>
       </div>
     </div>
+  </div>
+</div>
+
+
+<!-- // modal En mantenimiento -->
+
+<div class="modal" id="modalMentenimiento" aria-hidden="true" aria-labelledby="modalMentenimientoLabel" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">En Mantenimiento</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="col-lg-4 offset-lg-4 col-sm-6 offset-sm-3">
+          <img style="width: 100%;" src="https://firebasestorage.googleapis.com/v0/b/frontendportfolio-e949c.appspot.com/o/IconsMantenimiento%2FenMantenimiento.svg?alt=media&token=f264c12c-f8b7-4422-81e5-05200d8eab8d" alt="En Mentenimiento">
+        
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary"  data-bs-dismiss="modal" >Entendido</button>
+      </div>
+    </div>  
   </div>
 </div>

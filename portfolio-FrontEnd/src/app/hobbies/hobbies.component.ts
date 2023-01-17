@@ -37,6 +37,11 @@ constructor(
   let hobbieAdd = new HobbieModel(this.name, this.urlFoto); 
   this.actualizarDBservice.addHobbie(hobbieAdd);
   this.alerta.alertaAdd(hobbieAdd.name_hobbies);
+
+  this.serviceBackend.getHobbies().subscribe(resp=>{
+    this.hobbies = resp;
+  }); 
+
  }
 
  actualizarDBHobbies(){
