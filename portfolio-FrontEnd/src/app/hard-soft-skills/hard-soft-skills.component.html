@@ -1,7 +1,8 @@
 <br><br>
 <div class="container"  id="pestania">
   <div class="row align-items-center">
-    <div class="col-lg-3 text-center col-sm-12">
+    <div class="col-lg-3 text-lg-center col-sm-12 text-sm-center">
+      <h5></h5>
       <h5>Habilidades</h5>
     </div><br>
     <div class="col-lg-9 text-lg-start col-sm-12 text-sm-center" *ngIf="conectado()">
@@ -18,30 +19,32 @@
   </div>
 </div>
 
-
-<div class="container py-3">
-  <div class="row">
-    <div class="col-lg-3 text-center col-sm-6 py-4" *ngFor="let skill of skills">
-      
-      <div class="card"><br><br>
-        <div id="circle">
-          <div class="loader">
+<div class="container" id="contenedorIndividual">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-lg-3 text-center col-sm-6 py-4" *ngFor="let skill of skills">
+        
+        <div class="card" id="cardHabilidad"><br><br>
+          <div id="circle">
             <div class="loader">
-                <div class="loader">
-                   <div class="loader">
-                    ...
+              <div class="loader">
+                  <div class="loader">
+                     <div class="loader">
+                      O
+                     </div>
                    </div>
-                 </div>
-                </div>
-            </div> 
-          </div>
-        <h5> {{skill.name_skill}} </h5> 
-        <h6> {{ skill.percentage_skill}}% </h6>
-      </div>
-
-    </div> 
+                  </div>
+              </div> 
+            </div>
+          <h5> {{skill.name_skill}} </h5> 
+          <h6> {{ skill.percentage_skill}}% </h6>
+        </div>
+  
+      </div> 
+    </div>
   </div>
 </div>
+
 
  <!-- //////////// modal eliminar //////////////// -->
 

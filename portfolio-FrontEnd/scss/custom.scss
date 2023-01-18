@@ -1,5 +1,19 @@
-$primary: #109984;
+:root{
+  --esquinasImagenes: .5em;
+  --tamanoIconos: 1.5em;
+  --colorFondo:  #f3f3e4;
+  --fontTitle:  #474742;
+  --fontParrafos:  #62625c;
+  --fondoLogin: #1f1f1f;
+  --fondoPestania: rgba(104, 99, 99, 0.081);
+}
+//primarios
+$primary: #474742;
+$success: #f3f3e4;
 $thumbnail-border-radius: 1.5em;
+//links
+$link-color: #474742;
+$link-hover-color: #5b5b33;
 
 //////////// animacion habiliadades ////
 
@@ -16,9 +30,13 @@ $thumbnail-border-radius: 1.5em;
   width: calc(100% - 0px);
   height: calc(100% - 0px);
   border: 1px solid rgba(254, 254, 254, 0.212);
-  border-top: 4px solid rgba(0, 153, 255, 0.222);
+  border-top: 4px solid var(--fondoLogin);
   border-radius: 50%;
   animation: rotate 100s linear infinite;
+}
+.loader:hover{
+  border-top: 4px #9b5858;
+  border-style:groove;
 }
 
 @keyframes rotate {
@@ -55,16 +73,25 @@ $grid-breakpoints: (
   border-top-left-radius: var(--esquinasImagenes);
   border-top-right-radius: var(--esquinasImagenes);
 }
-
-:root{
-  --esquinasImagenes: .5em;
-  --tamanoIconos: 1.5em;
-  --colorFondo:  #f3f3e4;
-  --fontTitle:  #474742;
-  --fontParrafos:  #62625c;
-  --fondoLogin: #1f1f1f;
-  --fondoPestania: rgba(104, 99, 99, 0.081);
+#contenedorIndividual{
+  border-style: double;
+  border-color: var(--fondoPestania);
 }
+#cardHabilidad{
+  background-color: var(--fondoPestania);
+  border-style: none;
+}
+// #colorBotonesLogin button{
+//   color: var(--colorFondo);
+//   border-color: var(--colorFondo);
+// }
+// #colorBotonesLogin button:hover{
+//   color: var(--fondoLogin);
+//   border-color: var(--colorFondo);
+//   background-color: var(--colorFondo);
+// }
+
+
 
 
 

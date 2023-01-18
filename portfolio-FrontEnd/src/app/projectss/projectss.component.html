@@ -2,7 +2,8 @@
 
 <div class="container"  id="pestania">
   <div class="row align-items-center">
-    <div class="col-lg-3 text-center col-sm-12">
+    <div class="col-lg-3 text-lg-center col-sm-12 text-sm-center">
+      <h5></h5>
       <h5>Participacion en Proyectos</h5>
     </div>
     <div class="col-lg-9 text-lg-start col-sm-12 text-sm-center" *ngIf="conectado()">
@@ -21,7 +22,7 @@
 
 
 
-<div class="container">
+<div class="container" id="contenedorIndividual">
   <div class="row align-items-center" *ngFor="let project of projects">
     <div class="col-3 text-center">
       <img class="imagenWorkEducation" src="{{ project.url_photo_project }}" alt="Imagen-empresa">
