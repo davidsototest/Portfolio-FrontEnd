@@ -6,13 +6,13 @@
       <img class="imagenArgentinaPrograma" src="https://firebasestorage.googleapis.com/v0/b/frontendportfolio-e949c.appspot.com/o/AssetsPortfolioDS%2FLogoArgentinaProg1.webp?alt=media&token=0cf9e5c7-c590-47e0-abee-1e2837b8efe3" alt="logoArgentinaPrograma"> 
       <!-- link de imagen de argprog llega vacia. -->
     </div>
-      <div class="col-lg-3 text-end offset-lg-7 col-sm-8">
+
+      <div class="col-lg-3 text-end offset-lg-7 col-sm-8">     
 
         <button class="btn" *ngIf="conectado()">
           <img id="iconEditar" src="../../assets/icons-svg/edit.svg" alt="iconsPencel" href="#modalEdit" role="button" data-bs-toggle="modal" data-bs-target="#modalEdit" />
         </button>
         <div class="btn-group" role="group" aria-label="Basic outlined example" id="colorBotonesLogin">
-          <button type="button" class="btn btn-outline-success">Esp...</button>
           <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalContactos">Contactos</button>
           <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalLogin" *ngIf="!conectado()">Connect</button>
           <button type="button" *ngIf="conectado()" class="btn btn-outline-success"  (click)="signOut()">SignOut</button>
