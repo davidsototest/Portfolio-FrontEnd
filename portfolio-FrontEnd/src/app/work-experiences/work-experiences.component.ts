@@ -66,7 +66,10 @@ constructor(
  
  deleteDB(id:number){
   this.actualizarDBservice.deleteWord(id);
-  this.alerta.alertaDelete("Experiencia Laboral")
+  this.serviceBackend.getWord().subscribe(resp=>{
+    this.wordExperience = resp; 
+  });
+  this.alerta.alertaDelete("Experiencia Laboral");
  }
  
   ngOnInit(): void {

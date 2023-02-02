@@ -30,7 +30,6 @@ export class ContactLoginComponent implements OnInit {
     ) {
     this.serviceBackend.getContact().subscribe(resp=>{
       this.contacts = resp;
-      console.log (this.contacts);
     });
    } 
 
