@@ -61,7 +61,14 @@ export class EducationComponent implements OnInit {
 
     deleteDBEdu(id:number){
       this.actualizarDBservice.deleteEdu(id);
-      this.alerta.alertaDelete("Educación")
+      this.alerta.alertaDelete("Educación");
+      
+      this.serviceBackend.getEducation().subscribe(resp=>{ 
+        this.educations = resp;
+      });
+      this.serviceBackend.getEducation().subscribe(resp=>{ 
+        this.educations = resp;
+      });
      }
 
 

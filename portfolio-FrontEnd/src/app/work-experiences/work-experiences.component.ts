@@ -29,9 +29,7 @@ constructor(
 
   this.serviceBackend.getWord().subscribe(resp=>{
     this.wordExperience = resp; 
-    console.log (resp);  
-     
-    
+    console.log (resp);      
   });
  }
 
@@ -66,7 +64,13 @@ constructor(
  
  deleteDB(id:number){
   this.actualizarDBservice.deleteWord(id);
-  this.alerta.alertaDelete("Experiencia Laboral")
+  this.alerta.alertaDelete("Experiencia Laboral");
+  this.serviceBackend.getWord().subscribe(resp=>{
+    this.wordExperience = resp;       
+  });
+  this.serviceBackend.getWord().subscribe(resp=>{
+    this.wordExperience = resp;       
+  });
  }
  
   ngOnInit(): void {

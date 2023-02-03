@@ -58,6 +58,13 @@ constructor(
  deleteDBHobbie(id:number){
   this.actualizarDBservice.deleteHobbie(id);
   this.alerta.alertaDelete("Pasatiempo");
+
+  this.serviceBackend.getHobbies().subscribe(resp=>{
+    this.hobbies = resp;
+  }); 
+  this.serviceBackend.getHobbies().subscribe(resp=>{
+    this.hobbies = resp;
+  }); 
  }
 
   ngOnInit(): void {
