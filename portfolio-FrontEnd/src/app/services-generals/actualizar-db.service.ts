@@ -54,13 +54,13 @@ export class ActualizarDBService {
     public postBanner( body:BannerPresentation){
       return this.http.post<BannerPresentation>(this.url_banner, body).subscribe(resp =>{
         this.respuestaPost = resp;
-      })
+      });
     }
 
     public postWord (body:string) {
       return this.http.post<any>(this.url_word, body).subscribe(resp =>{
         this.respuestaAddWord = resp;
-      })
+      });
     }
 
     public addWord (body:WordModel){
@@ -70,9 +70,14 @@ export class ActualizarDBService {
     }
 
     public deleteWord(id:number){
-      return this.http.delete<number>(this.url_word+"/"+id).subscribe(resp =>{
-        this.respuestaDeleteWord = resp;
-      })
+      try {
+        return this.http.delete<number>(this.url_word+"/"+id).subscribe(resp =>{
+          this.respuestaDeleteWord = resp;
+        });
+      } catch (error) {
+        console.log(error);
+      }
+      return;
     }
     
     // EDUCATION ///
@@ -80,19 +85,19 @@ export class ActualizarDBService {
     public addEdu (body:EducationModel){
       return this.http.post<EducationModel>(this.url_education, body).subscribe(resp =>{
         this.respuestaEducation = resp;
-      })
+      });
     }
 
     public postEdu(body:any){
       return this.http.post<any>(this.url_education, body).subscribe(resp =>{
         this.respuestaPostEducation = resp;
-      })
+      });
     }
 
     public deleteEdu(id:number){
       return this.http.delete<number>(this.url_education+"/"+id).subscribe(resp =>{
         this.respuestaDeleteEdu = resp;
-      }) 
+      }); 
     }
 
       //// Skills /////
@@ -100,19 +105,19 @@ export class ActualizarDBService {
       public addSkill (body:SkillModel){
         return this.http.post<SkillModel>(this.url_skill, body).subscribe(resp =>{
           this.respuestaAddSkill = resp;
-        })
+        });
       }
 
       public postSkill(body:any){
         return this.http.post<any>(this.url_skill, body).subscribe(resp =>{
           this.respuestaPostSkill = resp;
-        })
+        });
       }
 
       public deleteSkill(id:number){
         return this.http.delete<number>(this.url_skill+"/"+id).subscribe(resp =>{
           this.respuestaDeleteSkill = resp;
-        }) 
+        });
       }
 
       // PROJECTS  ////////////
@@ -120,19 +125,19 @@ export class ActualizarDBService {
       public addProject (body:ProjectModel){
         return this.http.post<ProjectModel>(this.url_project, body).subscribe(resp =>{
           this.respuestaAddProject = resp;
-        })
+        });
       }
 
       public postProject(body:any){
         return this.http.post<any>(this.url_project, body).subscribe(resp =>{
           this.respuestaPostProject = resp;
-        })
+        });
       }
 
       public deleteProject(id:number){
         return this.http.delete<number>(this.url_project+"/"+id).subscribe(resp =>{
           this.respuestaDeleteProject = resp;
-        }) 
+        }); 
       }
 
       /// HOBBIESS /////////////
@@ -140,19 +145,19 @@ export class ActualizarDBService {
       public addHobbie (body:HobbieModel){
         return this.http.post<HobbieModel>(this.url_hobbie, body).subscribe(resp =>{
           this.respuestaAddHobbie = resp;
-        })
+        });
       }
 
       public postHobbie(body:any){
         return this.http.post<any>(this.url_hobbie, body).subscribe(resp =>{
           this.respuestaPostHobbie = resp;
-        })
+        });
       } 
 
       public deleteHobbie(id:number){
         return this.http.delete<number>(this.url_hobbie+"/"+id).subscribe(resp =>{
           this.respuestaDeleteHobbie = resp;
-        }) 
+        }); 
       }
 
       // CONTACTS //// 
@@ -160,7 +165,7 @@ export class ActualizarDBService {
       public postContact(body:any){
         return this.http.post<any>(this.url_contact, body).subscribe(resp =>{
           this.respuestaPostContact = resp; 
-        })
+        });
       }
 
   }

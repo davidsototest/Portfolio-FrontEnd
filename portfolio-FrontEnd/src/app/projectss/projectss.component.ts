@@ -64,6 +64,13 @@ export class ProjectssComponent implements OnInit {
    deleteDBProject(id:number){
     this.actualizarDBservice.deleteProject(id);
     this.alerta.alertaDelete("Proyecto");
+
+    this.serviceBackend.getProject().subscribe(resp=>{
+      this.projects = resp;
+    });
+    this.serviceBackend.getProject().subscribe(resp=>{
+      this.projects = resp;
+    });
    }
 
   ngOnInit(): void {

@@ -61,6 +61,13 @@ constructor(
  deleteDBSkill(id:number){
   this.actualizarDBservice.deleteSkill(id);
   this.alerta.alertaDelete("Habilidad");
+
+  this.serviceBackend.getSkill().subscribe(resp=>{
+    this.skills = resp;
+  });
+  this.serviceBackend.getSkill().subscribe(resp=>{
+    this.skills = resp;
+  });
  }
 
   ngOnInit(): void {
