@@ -25,7 +25,7 @@
   <div class="row align-items-end">
     <div class="row">
       <div class="col-lg-3 col-sm-6 py-3" id="fotoHobbies" *ngFor="let hobbie of hobbies">
-        <img src="{{ hobbie.url_photo_hobbies }}" alt="imagen pasatiempo">
+        <img src="{{ hobbie.url_photo_hobbies }}" alt="imagen pasatiempo"><br><br>
         <h5> {{hobbie.name_hobbies}} </h5>
       </div>
     </div>
@@ -80,11 +80,11 @@
           </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Nombre del Pasatiempo:</label>
-            <input type="text"  class="form-control" id="recipient-name" [(ngModel)]="HobbieEdit.name_hobbies" />
+            <input type="text"  class="form-control" [(ngModel)]="HobbieEdit.name_hobbies" />
           </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Foto (url):</label>
-            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="HobbieEdit.url_photo_hobbies" />
+            <input type="text" class="form-control" [(ngModel)]="HobbieEdit.url_photo_hobbies" />
           </div>
         </div>
       </div>
@@ -111,11 +111,11 @@
             
                 <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Nombre Pasatiempo:</label>
-                <input type="text" class="form-control" id="recipient-name" [(ngModel)]="name" name="name" />
+                <input type="text" class="form-control"  [(ngModel)]="name" name="name" />
                 </div>
                 <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Foto (url):</label>
-                <input type="text" class="form-control" id="recipient-name" [(ngModel)]="urlFoto" name="urlFoto"/>
+                <input type="text" class="form-control" [(ngModel)]="urlFoto" name="urlFoto"/>
                 </div>
             
           </form> 

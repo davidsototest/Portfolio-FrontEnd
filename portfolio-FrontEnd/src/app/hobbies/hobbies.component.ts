@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import Swal from 'sweetalert2';
-import { urlImgHobbies } from '../link-images/link-images';
 import { HobbieModel } from '../Models/HobbieModel';
 import { ActualizarDBService } from '../services-generals/actualizar-db.service';
 import { AlertasService } from '../services-generals/alertas.service';
@@ -13,7 +11,6 @@ import { ServiceBackEndService } from '../services-generals/service-back-end.ser
   styleUrls: ['./hobbies.component.css']
 })
 export class HobbiesComponent implements OnInit {
-urlImgHobbies:string=urlImgHobbies;
 hobbies: any[]; 
 
 name:string;

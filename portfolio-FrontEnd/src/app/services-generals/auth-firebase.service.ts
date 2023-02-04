@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-//import { getAuth } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"
 import { getAuth, signOut } from "firebase/auth";
 
 @Injectable({

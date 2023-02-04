@@ -2,11 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActualizarDBService } from '../services-generals/actualizar-db.service';
 import { LoginServiceService } from '../services-generals/login-service.service';
 import { ServiceBackEndService } from '../services-generals/service-back-end.service';
-import { Auth, getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { AuthFirebaseService } from '../services-generals/auth-firebase.service';
-import Swal from 'sweetalert2';
 import { AlertasService } from '../services-generals/alertas.service';
-// import { AuthFirebaseService } from '../services-generals/auth-firebase.service';
 
 @Component({
   selector: 'app-contact-login',
@@ -61,18 +58,10 @@ export class ContactLoginComponent implements OnInit {
     window.location.reload();
   }
 
-
-  // estaLogueado(){ 
-  //   return false;
-  //   // this.loginService.estaLogueado();
-  //   // return this.loginService.retorno;
-  // }
-
   actualizarDBContact(contac:any){
     this.actualizarDBservice.postContact(contac);
     this.alerta.alertaUpdate("Contactos");   
   }
-
 
   ngOnInit(): void {
   }

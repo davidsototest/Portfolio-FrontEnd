@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Swal from 'sweetalert2';
-import { urlImgProjects } from '../link-images/link-images';
 import { ProjectModel } from '../Models/ProjectModel';
-import { Projects } from '../projectss';
 import { ActualizarDBService } from '../services-generals/actualizar-db.service';
 import { AlertasService } from '../services-generals/alertas.service';
 import { LoginServiceService } from '../services-generals/login-service.service';

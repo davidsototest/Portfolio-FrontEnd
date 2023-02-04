@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import Swal from 'sweetalert2';
 import { SkillModel } from '../Models/Skill';
 import { ActualizarDBService } from '../services-generals/actualizar-db.service';
 import { AlertasService } from '../services-generals/alertas.service';
@@ -13,7 +12,6 @@ import { ServiceBackEndService } from '../services-generals/service-back-end.ser
   styleUrls: ['./hard-soft-skills.component.css']
 })
 export class HardSoftSkillsComponent implements OnInit {
-  valor3:number=50;
   skills: any[];
 
   habilidad:string;

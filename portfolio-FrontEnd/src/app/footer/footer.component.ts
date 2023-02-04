@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-footer:string= "© 2022-2025 David Soto";
+footer:string= "© 2023 David Soto";
   constructor() { }
 
   ngOnInit(): void {

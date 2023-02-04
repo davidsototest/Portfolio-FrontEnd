@@ -11,8 +11,7 @@ import { ServiceBackEndService } from '../services-generals/service-back-end.ser
   styleUrls: ['./work-experiences.component.css'] 
 })
 export class WorkExperiencesComponent implements OnInit {
-  wordExperience: any[];
- // wordAdd:WordModel;
+  wordExperience: any[];  
   wordE: any;
 
   name:string;
@@ -28,8 +27,7 @@ constructor(
   private alerta:AlertasService) {
 
   this.serviceBackend.getWord().subscribe(resp=>{
-    this.wordExperience = resp; 
-    console.log (resp);      
+    this.wordExperience = resp;      
   });
  }
 

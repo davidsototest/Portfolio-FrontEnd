@@ -1,13 +1,13 @@
 export class BannerPresentation {
 
     id?:number;
-    name:string = "cargando...";
-    title:string= "cargando...";
-    presentation:string= "cargando...";
-    url_photo:string= "cargando...";
-    url_banner:string= "cargando...";
-    url_photo_argProg:string= "cargando...";
-    location:string= "cargando...";
+    name:string;
+    title:string;
+    presentation:string;
+    url_photo:string;
+    url_banner:string;
+    url_photo_argProg:string;
+    location:string;
 
     constructor(name: string, title: string, presentation: string, url_foto: string, url_banner: string, url_logo: string, location:string){
         this.name = name;
